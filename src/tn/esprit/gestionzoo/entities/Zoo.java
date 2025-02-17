@@ -1,3 +1,5 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Zoo {
     private Animal[] animals;
     private String name;
@@ -7,6 +9,9 @@ public class Zoo {
 
     // Constructor
     public Zoo(String name, String city) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Zoo name cannot be empty");
+        }
         this.name = name;
         this.city = city;
         this.animals = new Animal[nbrCages];
@@ -26,19 +31,18 @@ public class Zoo {
 
     // Add an animal
     public boolean addAnimal(Animal animal) {
-        if (animalCount < nbrCages) {
-            for (int i = 0; i < animalCount; i++) {
-                if (animals[i].getName().equals(animal.getName())) {
-                    System.out.println("Animal already exists!");
-                    return false;
-                }
-            }
-            animals[animalCount++] = animal;
-            return true;
-        } else {
+        if (isZooFull()) {
             System.out.println("Zoo is full!");
             return false;
         }
+        for (int i = 0; i < animalCount; i++) {
+            if (animals[i].getName().equals(animal.getName())) {
+                System.out.println("Animal already exists!");
+                return false;
+            }
+        }
+        animals[animalCount++] = animal;
+        return true;
     }
 
     // Search for an animal

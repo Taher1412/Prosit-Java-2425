@@ -1,3 +1,5 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Animal {
     private String family;
     private String name;
@@ -5,10 +7,14 @@ public class Animal {
     private boolean isMammal;
 
     // Default Constructor
-    public Animal() {}
+    public Animal() {
+    }
 
     // Parameterized Constructor
     public Animal(String family, String name, int age, boolean isMammal) {
+        if (age < 0) {
+            throw new IllegalArgumentException("Age cannot be negative");
+        }
         this.family = family;
         this.name = name;
         this.age = age;
@@ -26,6 +32,18 @@ public class Animal {
     // Getters
     public String getName() {
         return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    // Setter for age
+    public void setAge(int age) {
+        if (age < 0) {
+            throw new IllegalArgumentException("Age cannot be negative");
+        }
+        this.age = age;
     }
 
     // toString Method

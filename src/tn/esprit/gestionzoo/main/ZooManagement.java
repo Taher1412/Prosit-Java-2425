@@ -1,3 +1,7 @@
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.Animal;
 import java.util.Scanner;
 
 public class ZooManagement {
