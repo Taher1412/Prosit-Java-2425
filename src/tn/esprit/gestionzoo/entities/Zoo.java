@@ -9,10 +9,10 @@ public class Zoo {
 
     // Constructor
     public Zoo(String name, String city) {
-        if (name == null || name.isEmpty()) {
-            throw new IllegalArgumentException("Zoo name cannot be empty");
+        if (!name.isEmpty()) {
+            this.name = name;
         }
-        this.name = name;
+
         this.city = city;
         this.animals = new Animal[nbrCages];
     }
@@ -22,6 +22,12 @@ public class Zoo {
         System.out.println("Zoo Name: " + name);
         System.out.println("City: " + city);
         System.out.println("Number of Cages: " + nbrCages);
+    }
+
+    public void setName(String name) {
+        if (!name.isEmpty()) {
+            this.name = name;
+        }
     }
 
     @Override

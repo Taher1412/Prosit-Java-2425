@@ -2,6 +2,10 @@ package tn.esprit.gestionzoo.main;
 
 import tn.esprit.gestionzoo.entities.Zoo;
 import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Aquatic;
+import tn.esprit.gestionzoo.entities.Terrestrial;
+import tn.esprit.gestionzoo.entities.Dolphin;
+import tn.esprit.gestionzoo.entities.Penguin;
 import java.util.Scanner;
 
 public class ZooManagement {
@@ -60,6 +64,27 @@ public class ZooManagement {
         System.out.println(seperator);
         // Display Animals After Removal
         myZoo.displayAnimals();
+
+        Aquatic aquatic1 = new Aquatic();
+        Terrestrial terrestrial1 = new Terrestrial();
+        Dolphin dolphin1 = new Dolphin();
+        Penguin penguin1 = new Penguin();
+
+        Aquatic aquatic2 = new Aquatic("Mammal", "Aquatic1", 5, true, "Ocean");
+        Terrestrial terrestrial2 = new Terrestrial("Mammal", "Lion1", 10, true, 4);
+        Dolphin dolphin2 = new Dolphin("Mammal", "Dolphin1", 3, true, "Ocean", 5);
+        Penguin penguin2 = new Penguin("Bird", "Penguin1", 2, false, "Antarctica", 6);
+
+        // Display created objects
+        System.out.println(aquatic2.toString());
+        System.out.println(terrestrial2.toString());
+        System.out.println(dolphin2.toString());
+        System.out.println(penguin2.toString());
+
+        // Call swim method
+        aquatic2.swim();
+        dolphin2.swim();
+        penguin2.swim();
 
         // Close Scanner
         scanner.close();

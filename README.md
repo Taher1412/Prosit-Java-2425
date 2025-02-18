@@ -13,6 +13,7 @@ All course materials and Prosits can be found in the `/docs` folder.
 - [`Prosit_2.pdf`](docs/Prosit_2.pdf) - Zoo and Animal class specifications.
 - [`Prosit_3.pdf`](docs/Prosit_3.pdf) - Enhancements and additional methods for the zoo.
 - [`Prosit_4.pdf`](docs/Prosit_4.pdf) - Including packages.
+- [`Prosit_5.pdf`](docs/Prosit_5.pdf) - Heritage.
 
 - More Prosits will be added throughout the semester.
 
