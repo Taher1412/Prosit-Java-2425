@@ -86,6 +86,8 @@ public class ZooManagement {
         dolphin2.swim();
         penguin2.swim();
 
+        myZoo.addAnimal(aquatic2);
+
         // Close Scanner
         scanner.close();
     }

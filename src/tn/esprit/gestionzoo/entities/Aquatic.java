@@ -11,12 +11,28 @@ public class Aquatic extends Animal {
         this.habitat = habitat;
     }
 
+    public String getHabitat() {
+        return this.habitat;
+    }
+
     @Override
     public String toString() {
         return super.toString() + ", habitat=" + habitat;
     }
 
-    public void swim() {
-        System.out.println("This aquatic animal is swimming.");
+    public abstract void swim();
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+
+        Aquatic aquatic = (Aquatic) obj;
+
+        return this.getName().equals(aquatic.getName()) &&
+                this.getAge() == aquatic.getAge()
+                && this.getHabitat() == aquatic.getHabitat();
     }
 }
