@@ -34,6 +34,10 @@ public class Zoo {
         }
     }
 
+    public Aquatic[] getAquaticAnimals() {
+        return aquaticAnimals;
+    }
+
     @Override
     public String toString() {
         return "Zoo{" + "name='" + name + '\'' + ", city='" + city + '\'' + ", nbrCages=" + nbrCages + '}';
@@ -97,7 +101,7 @@ public class Zoo {
     }
 
     public void addAquaticAnimal(Aquatic aquatic) {
-        if (isZooFull()) {
+        if (aquaticCount >= nbrAquatic) {
             System.out.println("Zoo is full!");
             return;
         }
@@ -107,8 +111,6 @@ public class Zoo {
                 return;
             }
         }
-        animals[animalCount++] = aquatic;
-        addAnimal(aquatic);
     }
 
     public float maxPenguinSwimmingDepth() {
